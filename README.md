@@ -46,8 +46,37 @@ Here I am importing pandas library with object name pd and I call the series wit
       s1=pd.Series(n,dtype=np.float32)
       print(s1)
    
-* If you observe in output we are finding some index value, then let see how to change the index's
+* If you observe in output we are finding some index values, then let see how to change the index's
 
       s=pd.Series([1,2,3],index=['a','b','c']) # using index property name we can change index's
       print(s)
+      
+* Now, see how to access the data from series, we already see how to access the data in list concepts,so, same way we can access data. lets see with examples
+
+        import pandas as pd
+        import numpy as np
+        n=np.array([1,2,3,"hello","nice day",12.45])
+        s=pd.Series(n)
+        print(s)
+        
+        # update the data
+        s[0]=100
+        print(s)
+        
+        # access the data
+        print(s[0])
+        # print the data in range
+        print(s[1:3])   # starting index:ending index
+        print(s[:4])  
+
+        # print the data in reverse order
+        print(s[::-1])
+
+ok, fine this is the way we can create the series and access the data from series, we will do some examples of series in dataframes. I hope it is clear, now we will discuss about DataFrames
+
+# Pandas DataFrames - Intraduction:
+DataFrame is a main object in pandas. It is used to represent data with rows and columns. simply it is a two dimensional array. DataFrame provide a major key roll in Datascience for data manipulation. DataFrame is a datastructure represent data in tabular or excel spread sheet(like data). I hope it is clear. We will see the how to create dataframes and what we do data operations using dataframes with examples. let's start
+
+
+
 
