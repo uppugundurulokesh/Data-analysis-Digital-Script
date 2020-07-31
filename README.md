@@ -72,10 +72,57 @@ Here I am importing pandas library with object name pd and I call the series wit
         # print the data in reverse order
         print(s[::-1])
 
-ok, fine this is the way we can create the series and access the data from series, we will do some examples of series in dataframes. I hope it is clear, now we will discuss about DataFrames
+ok, fine this is the way we can create the series and access the data from series, we will do some more examples of series in dataframes. I hope it is clear, now we will discuss about DataFrames
 
 # Pandas DataFrames - Intraduction:
 DataFrame is a main object in pandas. It is used to represent data with rows and columns. simply it is a two dimensional array. DataFrame provide a major key roll in Datascience for data manipulation. DataFrame is a datastructure represent data in tabular or excel spread sheet(like data). I hope it is clear. We will see the how to create dataframes and what we do data operations using dataframes with examples. let's start
+
+Here we will importing pandas library with object name as pd, and we will see how to pass list,dictionaries,numpy values to dataframe and how to ready csv files,excel files,json files etc using dataframes, ok let's start with examples
+
+* Create DataFrame:
+
+        import pandas as pd
+        df=pd.DataFrame()     # Here, by using pandas object we are create a dataframe and pass the reference to df variable
+        type(df)              # Here just know the type of variable
+
+* Now, we know how to create DataFrame using pandas then pass the list of values to dataframe
+
+        import pandas as pd
+        l=[[1,2,3],[4,5,6],[7,8,9],[10,11,12]]  # Here, we take 2d array values into reference variable name "l"
+        df=pd.DataFrame(l)                      # Here, pass the list object "l" to DataFrame
+        print(df)
+      
+* If you observe the output of above program we get the values with rows and columns along with column names 0,1,2 and some index values based on values of list, then let's see how to change columns names and index names
+* Change the column names and index names:
+
+        import pandas as pd
+        l=[[1,2,3],[4,5,6],[7,8,9],[10,11,12]]
+        df=pd.DataFrame(l,columns=['a','b','c'],index=['row1','row2','row3','row4'])
+        df
+        
+ * I hope it is clear, Now see how to pass the numpy values to DataFrame:
+ 
+        import pandas as pd
+        import numpy as np
+        n=np.array([[1,2],[3,4],[5,6]])
+        df=pd.DataFrame(n,columns=['a','b'],index=[1,2,3])
+        df
+        
+ * Now, let's check dictionaries to DataFrame:
+ 
+        import pandas as pd
+        df=pd.DataFrame({'a':[1,2,3],'b':[4,5,6]})  # here, we are passing dictionaries to DataFrame
+        df
+        
+* Now, pass the list of tuples to DataFrame:
+
+        #using list of tuples
+        import pandas as pd
+        student=[("sai",34),("ganesh",35),("ram",45)]
+        df=pd.DataFrame(student,columns=['sname','smarks'])
+        df
+* Upto now we just learn how to create DataFrame and how to pass different types of values to DataFrame, hope it is clear
+* Now, we will learn how to read the different files like csv files, excel files, json files etc
 
 
 
