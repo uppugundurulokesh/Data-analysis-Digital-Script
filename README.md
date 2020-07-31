@@ -123,6 +123,23 @@ Here we will importing pandas library with object name as pd, and we will see ho
         df
 * Upto now we just learn how to create DataFrame and how to pass different types of values to DataFrame, hope it is clear
 * Now, we will learn how to read the different files like csv files, excel files, json files etc
+* Read data from csv files, what is csv(comma seperated values) means each column values in a table seperate with comma ex: 101,saiganesh,950 so, this files are called comma seperated values. let's see how to read csv files using pandas into dataframe ok,
+* we can read csv files by using simple one line i.e pd.read_csv("filename.csv")
+* Now see with example: create one weather.csv file and place that file into your working directory like below example
+        
+        	est	      temparature	winspeed	humidity	event
+        	1/2/2019	30	            12	      12.50	     rain
+        	1/2/2019	33	            14	      14.23	     rain
+        	1/3/2019	43	            13	      43.13	     rain
+        	1/4/2019	55	            8	      55.80	     fullair
+        	1/5/2019	66	            10	      66.10 	 cold
+        	1/6/2019	34	            15	      34.15	     cold
+        
+* Read Data from .csv file:
+
+        import pandas as pd
+        df=pd.read_csv('weather.csv')   
+        df
 
 
 
