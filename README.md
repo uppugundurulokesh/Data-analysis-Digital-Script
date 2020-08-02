@@ -164,4 +164,51 @@ Here we will importing pandas library with object name as pd, and we will see ho
 * Upto now we are creating DataFrame, let's see how to access data from DataFrame
 ### Data Operations in DataFrame:
 
+    import pandas as pd
+    df=pd.read_csv('weather.csv')
+    print(df.shape)   # find the dimention of data i.e how many rows and how many columns
+    print(df.head())  # display top 5 rows as default  and we can use df.head(10) 
+    print(df.tail())  # display bottom 5 rows of data
+    print(df.columns)  # print the columns names
+    print(df[2:5])     # get the rows using slicing
+    
+    #find the mean
+    df[['temparature']].mean()  # one column mean
+
+    #find the median
+    df['temparature'].median()   # one column median
+
+    #find the describe of data
+    df[['temparature']].describe()  # one column describe 
+   
+    df.describe()    # all columns describe
+    df.mean()   # all columns mean
+    df.median()  # all columns median
+* Get the one columns data:
+
+        # get the one column
+        #df.est (or)
+        df['est']
+        print(type(df['est']))  # find the type of df. if we use single [] then return series
+        print(type(df[['est']])) # if we use double [[]] then return data frame
+        
+ * Get the two or more columns data:
+ 
+        # get more than one column
+        df[['est','temparature']].head()
+        
+ * Select the rows using condition based, Here we will get maximum temparature value
+ 
+         # select the row which have maximum temparature
+         df['temparature'].max()  # find the maximum value 
+         df['temparature']==df['temparature'].max() #  return the boolean value of max
+         df[df['temparature']==df['temparature'].max()] # return the row(dataframe) of max
+         df[['est','temparature']][df['temparature']==df['temparature'].max()] # return the only two columns of max value
+         
+ * More than two conditions
+    
+        mydf=df[(df['temparature']>=60) & (df['event']=='cold')]
+        mydf
+        
+ 
 
