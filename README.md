@@ -141,6 +141,27 @@ Here we will importing pandas library with object name as pd, and we will see ho
         df=pd.read_csv('weather.csv')   
         df
 
+* You can also read data from excel,html(hyper text markup language) and json(java script object notation) by using below syntax
+    * pd.read_excel("filename/url")  # Reading data from excel sheet
+    * pd.read_html("filename/url")   # Reading data from html table
+    * pd.read_json("filename/url")   # Reading data from json
 
+
+* Now, see how to convert csf file to json file:
+
+        #convert csv to json
+        import pandas as pd
+        df=pd.read_csv('weather.csv')
+        jsondata=df.to_json(orient="records")    
+        jsondata
+        
+ * Now, we have json data. let's see how to read json data to DataFrame
+
+        import pandas as pd
+        dff=pd.read_json(jsondata)
+        dff
+
+* Upto now we are creating DataFrame, let's see how to access data from DataFrame
+### Data Operations in DataFrame:
 
 
