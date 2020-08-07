@@ -210,5 +210,73 @@ Here we will importing pandas library with object name as pd, and we will see ho
         mydf=df[(df['temparature']>=60) & (df['event']=='cold')]
         mydf
         
- 
+ ### Grouping DataFrames:
+
+* Upto now, we see how to create and some operation on DataFrame, now let'see how to group the data in dataframe
+* We have groupby() method for grouping the data, let's see with practical
+
+        import pandas as pd
+        df=pd.read_csv('weather.csv')      # convert weather data to DataFrame
+        g=df.groupby('city')               # group the data using city feature
+        
+* Read the data from g
+        
+        for df,df_group in g:
+            print(df)        # print the group name
+            print(df_group)  # print the group data value
+
+* get the grouping data into dataframe    
+
+        g.get_group('guntur')
+        
+        # find some static operation in grouped data
+        g.min()
+        g.max()
+        g.mean()
+        g.describe()
+### Concatinate two DataFrames:
+
+* We can concate the DataFrames using pd.concat() method, let's see with examples
+
+        # First DataFrame
+        wd=pd.DataFrame({'city':['guntur','vija','vizag'],'count':[1000,2000,1500],'area':[12.2,12.5,11.4]})
+        wd
+        
+        #Second DataFrame
+        wd2=pd.DataFrame({'city':['tirupati','chenn','halls'],'count':[2000,3000,3500],'area':[22.2,32.5,41.4]})
+        wd2
+        
+        #concate wd and wd2
+        total=pd.concat([wd,wd2])
+        total
+        
+        # ignore the index values using ignore_index
+        total=pd.concat([wd,wd2],ignore_index=True)
+        total
+        
+        # concat the two data frames side by side
+        total=pd.concat([wd,wd2],axis=1)
+        total
+       
+### Merge the DataFrames:
+* We can merge the dataframes using pd.merge() method, let's see with examples
+
+        #students marks data
+        smarks=pd.DataFrame({'sno':[101,102,103,104],'sname':['a','b','c','d'],'sm1':[10,20,30,40],'sm2':[10,20,30,40]})
+        smarks
+        
+        #students address data
+        sadd=pd.DataFrame({'sno':[101,102,103],'sadd':['guntur','vija','vizag']})
+        sadd
+        
+        # merge smarks and sadd tables data
+        s=pd.merge(smarks,sadd,on='sno')  # by using sno we can merge two data frames ex: on="sno"
+        s
+        
+        s=pd.merge(smarks,sadd,on='sno',how='outer')  # how='outer' => merge the all data of table_one
+        s
+
+
+
+
 
