@@ -234,7 +234,7 @@ Here we will importing pandas library with object name as pd, and we will see ho
         g.max()
         g.mean()
         g.describe()
-### Concatinate two DataFrames:
+### Concat two DataFrames:
 
 * We can concate the DataFrames using pd.concat() method, let's see with examples
 
